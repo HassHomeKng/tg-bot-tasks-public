@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  task_bot:
+    container_name: task_bot_container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - TOKEN=${BOT_TOKEN}
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
